@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "WSL-C++运行",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}", // 要运行的程序路径，需与tasks.json对应
+            "args": [
+                "<",
+                "${fileDirname}/input.txt", // 核心：告诉程序从input.txt读取输入
+                // 重定向输出
+                // ">",
+                // "${fileDirname}/output.txt"
+            ], // 如果a你的程序需要输入命令行参数，写在这里
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb", // 使用Linux下的gdb调试器
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "WSL-G++编译", // 关键：运行前先执行上面定义的编译任务
+            "miDebuggerPath": "/usr/bin/gdb" // 调试器路径
+        }
+    ]
+}

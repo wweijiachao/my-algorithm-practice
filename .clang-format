@@ -1,0 +1,18 @@
+---
+BasedOnStyle: Google
+
+# 1. 大括号紧跟在语句后面
+BreakBeforeBraces: Attach
+
+# 2. 允许单行 if 不换行 (if (a) return;)
+AllowShortIfStatementsOnASingleLine: WithoutElse
+
+# 3. 允许单行循环不换行 (while (true) continue;)
+AllowShortLoopsOnASingleLine: true
+
+# 4. 甚至允许简单的函数写在同一行 (int getX() { return x; })
+AllowShortFunctionsOnASingleLine: All
+
+# 5. 缩进宽度
+IndentWidth: 4
+---
