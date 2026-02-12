@@ -5,10 +5,11 @@
             "name": "WSL-C++运行",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}/${fileBasenameNoExtension}", // 要运行的程序路径，需与tasks.json对应
+            "program": "${workspaceFolder}/bin/${fileBasenameNoExtension}", // 要运行的程序路径，需与tasks.json对应
             "args": [
-                "<",
-                "${fileDirname}/input.txt", // 核心：告诉程序从input.txt读取输入
+                // 重定向输入
+                // "<",
+                // "${fileDirname}/input.txt", // 核心：告诉程序从input.txt读取输入
                 // 重定向输出
                 // ">",
                 // "${fileDirname}/output.txt"
@@ -25,7 +26,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "WSL-G++编译", // 关键：运行前先执行上面定义的编译任务
+            "preLaunchTask": "WSL-G++-complie", // 关键：运行前先执行上面定义的编译任务
             "miDebuggerPath": "/usr/bin/gdb" // 调试器路径
         }
     ]

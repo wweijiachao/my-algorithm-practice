@@ -2,27 +2,51 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "type": "cppbuild",
-            "label": "WSL-G++编译", // 任务名称
+            "label": "clean bin",
+            "type": "shell",
+            "command": "mkdir -p ${workspaceFolder}/bin && rm -f ${workspaceFolder}/bin/*",
+            "presentation": {
+                "reveal": "silent",
+                "close": true
+            }  
+        },
+        // {
+        //     "label": "clean bin",
+        //     "type": "shell",
+        //     // 1. 使用递归删除整个 bin 文件夹再重建，这是最彻底的“清空”
+        //     // 2. 移除末尾的 *，直接删除目录内容
+        //     "command": "rm -rf ${workspaceFolder}/bin && mkdir -p ${workspaceFolder}/bin",
+        //     "presentation": {
+        //         "reveal": "silent",
+        //         "close": true
+        //     }
+        // },
+        {
+            "type": "shell",
+            "label": "WSL-G++-complie", // 任务名称
             "command": "/usr/bin/g++", // 编译器的绝对路径
             "args": [
+                "-DLOCAL",
                 "-fdiagnostics-color=always",
                 "-g", // 生成调试信息，不加这个没法断点调试
                 "${file}", // 当前打开的源文件
                 "-Wall",
                 "-O0",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}" // 生成的可执行文件名
+                "${workspaceFolder}/bin/${fileBasenameNoExtension}" // 生成的可执行文件名
             ],
             "options": {
                 "cwd": "${fileDirname}" // 在源文件所在目录运行命令
             },
             "problemMatcher": ["$gcc"],
+            "dependsOn": [
+                "clean bin"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true // 设置为默认编译任务
             },
-            "detail": "研究生级别的基础C++编译配置"
+            "detail": "基础C++编译配置"
         }
     ]
 }
