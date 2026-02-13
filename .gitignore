@@ -72,5 +72,5 @@ Testing/
 bin/
 
 # 输入文件
-luogu/input.txt
-nowcoder/input.txt
+luogu/*.txt
+nowcoder/*.txt

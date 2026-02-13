@@ -10,6 +10,7 @@ public:
         arr.assign(num, 0);
         init();
         run();
+        output();
     }
 private:
     int num;
@@ -22,8 +23,12 @@ private:
     }
     void run() {
         sort(arr.begin(), arr.end());
+        auto it = unique(arr.begin(), arr.end());
+        arr.erase(it, arr.end());
+        
     }
     void output() {
+        cout << arr.size() << endl;
         for (auto a: arr) {
             cout << a << ' ';
         }
