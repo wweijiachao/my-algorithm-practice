@@ -28,6 +28,7 @@
             "args": [
                 "-DLOCAL",
                 "-fdiagnostics-color=always",
+                "-fsanitize=address",   // 程序运行时一旦越界，立马报错并打印堆栈
                 "-g", // 生成调试信息，不加这个没法断点调试
                 "${file}", // 当前打开的源文件
                 "-Wall",

@@ -1,20 +1,15 @@
 #include <iostream>
 #include <set>
+#include <vector>
 using namespace std;
 int n;
 set<int> q;
 
 int main(void) {
     cin >> n;
-    while(n--) {
-        int x;
-        scanf("%d", &x);
-        q.insert(x);
-    }
-    printf("%d\n", q.size());
-    for(auto x:q) printf("%d ", x);
-    
-    
+    vector<vector<int>> c;
+    c.assign(n, vector<int>(n, 0));
+    cout << c[0][n];
     
     return 0;
 }
