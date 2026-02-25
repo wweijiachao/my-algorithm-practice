@@ -74,3 +74,6 @@ bin/
 # 输入文件
 luogu/*.txt
 nowcoder/*.txt
+
+# 其他
+snippets/unusedImgs

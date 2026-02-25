@@ -1,5 +1,11 @@
 {
     // ... 其他设置 ...
     
-    "editor.inlineSuggest.enabled": false
+    "editor.inlineSuggest.enabled": false,
+    "markdown.copyFiles.destination": {
+        "**/*": "/snippets/img/"
+    },
+    "vim.handleKeys": {
+        "<C-v>": false
+    }
 }
