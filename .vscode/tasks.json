@@ -6,6 +6,8 @@
             "type": "shell",
             "command": "rm -rf ${workspaceFolder}/bin && mkdir -p ${workspaceFolder}/bin",
             "presentation": {
+                "focus": true,
+                "clear": true,
                 "reveal": "silent",
                 "close": true
             }  
